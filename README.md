@@ -56,7 +56,7 @@ This extension isn't published to the Raycast Store, so you install it manually.
 ### 1. Clone
 
 ```bash
-git clone https://github.com/zdenekculik/raycast-ghostty-arranger.git
+git clone https://github.com/ZdenekCulik/raycast-ghostty-arranger.git
 cd raycast-ghostty-arranger
 ```
 
