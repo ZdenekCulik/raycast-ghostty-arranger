@@ -31,6 +31,13 @@
       "title": "Ghostty Quarters",
       "description": "Arrange four Ghostty windows in a 2x2 grid",
       "mode": "no-view"
+    },
+    {
+      "name": "last-message",
+      "title": "Last Claude Message",
+      "description": "Show the last Claude Code response",
+      "mode": "view",
+      "icon": "extension-icon.png"
     }
   ],
   "dependencies": {
