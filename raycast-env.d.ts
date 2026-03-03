@@ -21,6 +21,8 @@ declare namespace Preferences {
   export type Thirds = ExtensionPreferences & {}
   /** Preferences accessible in the `quarters` command */
   export type Quarters = ExtensionPreferences & {}
+  /** Preferences accessible in the `last-message` command */
+  export type LastMessage = ExtensionPreferences & {}
 }
 
 declare namespace Arguments {
@@ -32,5 +34,7 @@ declare namespace Arguments {
   export type Thirds = {}
   /** Arguments passed to the `quarters` command */
   export type Quarters = {}
+  /** Arguments passed to the `last-message` command */
+  export type LastMessage = {}
 }
 

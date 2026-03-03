@@ -75,21 +75,12 @@ export async function runArrangeLayout() {
       if (count === 0) {
         JSON.stringify({ error: "No Ghostty windows found" });
       } else {
-        var cols = Math.ceil(Math.sqrt(count));
-        var rows = Math.ceil(count / cols);
-        var idx = 0;
-        for (var row = 0; row < rows; row++) {
-          var isLastRow = row === rows - 1;
-          var inRow = isLastRow ? count - row * cols : cols;
-          for (var col = 0; col < inRow; col++) {
-            var x = Math.round(col * (W / inRow));
-            var y = Math.round(row * (H / rows));
-            var w = col === inRow - 1 ? W - x : Math.round(W / inRow);
-            var h = isLastRow ? H - y : Math.round(H / rows);
-            ghostty.windows[winIdxs[idx]].position = [originX + x, originY + y];
-            ghostty.windows[winIdxs[idx]].size = [w, h];
-            idx++;
-          }
+        var currentX = 0;
+        for (var i = 0; i < count; i++) {
+          var w = i === count - 1 ? W - currentX : Math.round((i + 1) * (W / count)) - currentX;
+          ghostty.windows[winIdxs[i]].position = [originX + currentX, originY];
+          ghostty.windows[winIdxs[i]].size = [w, H];
+          currentX += ghostty.windows[winIdxs[i]].size()[0];
         }
         JSON.stringify({ ok: true });
       }
